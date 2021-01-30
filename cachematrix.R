@@ -1,7 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These two function show how to use Lexical Scoping
+## These function compute the inverse of a matrix,
+## If the inverse is in the cache, cached value will be returned
+## If the inverse isn't in the cache, solve function
+## will be used to compute the inverse and store result in the cache
 
-## Write a short comment describing this function
+## makeCacheMatrix function has one input is a matrix
+## it returns a list contains following functions
+## 1. set: set a new matrix and clear cache
+## 2. get: get the current matrix
+## 3. setinverse: set new inverse matrix
+## 4. getinverse: get cached inverse
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -20,7 +28,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve
+## input: a list returned from makeCacheMatrix function
+## it get the inverse value from cache, if inverse is not in cache
+## it computes the inverse using solve function
+## and store the result in the cache
+## if inverse is in the cache, the cached value will be returned
 
 cacheSolve <- function(x, ...) {
   i <- x$getinverse()
